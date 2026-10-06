@@ -1,0 +1,42 @@
+# Netlify configuration — Ibrahim Khan portfolio
+# Build: markdown → static HTML via build.js, output in /dist
+
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+# Friendly 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Force HTTPS + www handling is configured in the Netlify UI / domain settings.
+
+# ---------------- Security headers ----------------
+# NOTE: This site is intentionally single-file HTML with inline <style>/<script>
+# for maximum performance, so style-src and script-src require 'unsafe-inline'.
+# If you later extract CSS/JS into files, replace 'unsafe-inline' with nonces
+# or hashes to harden the CSP further.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://unpkg.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+# ---------------- Asset caching ----------------
+# Assets are referenced by stable paths, so a long-lived cache is safe as long
+# as you change the file name when the file changes (e.g. ibrahim-khan-420.v2.webp).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

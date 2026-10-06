@@ -1,0 +1,133 @@
+# ─────────────────────────────────────────────────────────────────────
+# Decap CMS configuration for the Ibrahim Khan portfolio
+# Docs: https://decapcms.org/docs/
+# ─────────────────────────────────────────────────────────────────────
+
+# OPTION A — Netlify (recommended): enable Netlify Identity + Git Gateway
+# on your site, then login happens via /admin with your Netlify Identity.
+backend:
+  name: git-gateway
+  branch: main
+
+# OPTION B — Any static host incl. Cloudflare Pages: direct GitHub backend
+# with PKCE (no auth server needed). Create a GitHub OAuth App
+# (see README → "Decap auth on Cloudflare Pages"), then comment out the
+# block above and use this instead:
+# backend:
+#   name: github
+#   repo: YOUR-USERNAME/YOUR-REPO
+#   branch: main
+#   auth_type: pkce
+#   app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID
+
+# Draft → In review → Ready workflow
+publish_mode: editorial_workflow
+
+# Where uploaded media lives. Browse/optimize images before publishing.
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+site_url: https://imibrahimkhan.com
+display_url: https://imibrahimkhan.com
+logo_url: https://imibrahimkhan.com/assets/favicon.svg
+
+collections:
+  # ── Site settings (single file) ─────────────────────────────────────
+  - name: settings
+    label: Site Settings
+    files:
+      - name: general
+        label: General
+        file: content/settings.md
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Job title, name: title, widget: string }
+          - { label: Tagline, name: tagline, widget: text }
+          - { label: Location, name: location, widget: string }
+          - { label: Availability note, name: availability, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: WhatsApp number (country code, digits only), name: whatsapp, widget: string }
+          - { label: WhatsApp pre-filled message, name: whatsapp_text, widget: string }
+          - { label: LinkedIn URL, name: linkedin, widget: string }
+          - { label: Site URL (no trailing slash), name: site_url, widget: string, hint: "Used for canonical, sitemap, RSS and llms.txt" }
+          - { label: Meta description, name: meta_description, widget: text }
+          - { label: Portrait photo, name: photo, widget: image, required: false }
+          - { label: OG image, name: og_image, widget: image, required: false }
+
+  # ── Home page (single file) ─────────────────────────────────────────
+  - name: home
+    label: Home
+    files:
+      - name: home
+        label: Home Page
+        file: content/home.md
+        fields:
+          - { label: Hero heading, name: hero_heading, widget: text }
+          - { label: Hero subheading, name: hero_subheading, widget: text }
+          - { label: "About: one-sentence answer", name: about_answer, widget: text, hint: "AEO: 1–2 self-contained sentences that answer 'who is this person?'" }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - { label: Education — degree, name: education_degree, widget: string }
+          - { label: Education — school, name: education_school, widget: string }
+          - { label: Education — years, name: education_years, widget: string }
+          - { label: Certifications, name: certifications, widget: list, field: { label: Certification, name: certification, widget: string } }
+          - { label: About body (Markdown), name: body, widget: markdown }
+
+  # ── Services (folder) ───────────────────────────────────────────────
+  - name: services
+    label: Services
+    folder: content/services
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Order, name: order, widget: number, default: 1 }
+      - { label: "Direct answer (AEO)", name: answer, widget: text, hint: "40–60 word direct answer shown before the details" }
+      - { label: Bullet points, name: bullets, widget: list, field: { label: Point, name: point, widget: string } }
+      - { label: Details (Markdown), name: body, widget: markdown, hint: "Use Q&A-style headings: 'What you get', 'Who is this for?'" }
+
+  # ── Projects (folder) ───────────────────────────────────────────────
+  - name: projects
+    label: Projects
+    folder: content/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Order, name: order, widget: number, default: 1 }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Role, name: role, widget: string, required: false }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+      - { label: Case study (Markdown), name: body, widget: markdown }
+
+  # ── FAQ (folder) ────────────────────────────────────────────────────
+  - name: faq
+    label: FAQ
+    folder: content/faq
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Question, name: question, widget: string }
+      - { label: Order, name: order, widget: number, default: 1 }
+      - { label: Answer, name: answer, widget: text, hint: "Plain, self-contained answer — this feeds FAQ schema too" }
+
+  # ── Blog posts (folder) ─────────────────────────────────────────────
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, hint: "URL part: /blog/your-slug/ — lowercase, hyphens" }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Description, name: description, widget: text, hint: "Also used as the meta description and card teaser — start with the direct answer" }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string }, hint: "e.g. Email Marketing, Klaviyo, Web Development" }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Cover alt text, name: cover_alt, widget: string, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false, hint: "Drafts are excluded from the build" }
+      - { label: Body (Markdown), name: body, widget: markdown, hint: "Start with a 40–60 word direct answer, then Q&A-style H2 sections, lists and tables" }

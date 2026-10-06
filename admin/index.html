@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Content Manager — Ibrahim Khan</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<!-- Decap CMS loads ./config.yml automatically -->
+<style>
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0a0b0f;color:#eef1f7}
+  #nc-root{min-height:100vh}
+  .boot{display:grid;place-items:center;min-height:100vh;text-align:center}
+  .boot .card{display:grid;gap:1rem;justify-items:center;padding:2rem}
+  .boot .mark{display:grid;place-items:center;width:3rem;height:3rem;border-radius:.9rem;
+    background:linear-gradient(135deg,#f2a93b,#ffc96a);color:#1a1204;font-weight:700}
+  .boot p{color:#a0a9ba;font-size:.9rem;max-width:34ch}
+  .spinner{width:2rem;height:2rem;border-radius:50%;border:3px solid rgba(242,169,59,.2);
+    border-top-color:#f2a93b;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<!-- Decap CMS mounts here -->
+<div class="boot" id="boot">
+  <div class="card">
+    <div class="mark" aria-hidden="true">IK</div>
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Loading the content manager… Sign in with your GitHub account to edit the website content.</p>
+  </div>
+</div>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script>
+  // Remove the loading screen once the CMS UI mounts.
+  var obs = new MutationObserver(function(){
+    if(document.querySelector('#nc-root') && document.querySelector('#nc-root').children.length){
+      var b = document.getElementById('boot'); if(b) b.remove(); obs.disconnect();
+    }
+  });
+  obs.observe(document.body, {childList:true, subtree:true});
+</script>
+</body>
+</html>

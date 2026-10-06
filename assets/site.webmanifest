@@ -1,0 +1,15 @@
+{
+  "name": "Ibrahim Khan — Full-Stack Web Developer & Email Marketing Expert",
+  "short_name": "Ibrahim Khan",
+  "description": "I build high-converting websites and email campaigns that grow your sales.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0b0f",
+  "theme_color": "#0a0b0f",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ibrahim Khan — Full-Stack Web Developer &amp; Email Marketing Expert</title>
+<meta name="description" content="Ibrahim Khan is a Full-Stack Web Developer & Email Marketing Expert based in Cox's Bazar, Bangladesh. He builds fast, high-converting websites and Klaviyo/Mailchimp email campaigns that grow your sales.">
+<link rel="canonical" href="https://imibrahimkhan.com/">
+<meta name="author" content="Ibrahim Khan">
+<meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ibrahim Khan">
+<meta property="og:title" content="Ibrahim Khan — Full-Stack Web Developer & Email Marketing Expert">
+<meta property="og:description" content="I build high-converting websites and email campaigns that grow your sales. Available for freelance projects.">
+<meta property="og:url" content="https://imibrahimkhan.com/">
+<meta property="og:image" content="https://imibrahimkhan.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ibrahim Khan — Full-Stack Web Developer & Email Marketing Expert">
+<meta name="twitter:description" content="I build high-converting websites and email campaigns that grow your sales.">
+<meta name="twitter:image" content="https://imibrahimkhan.com/assets/img/og-image.png">
+<!-- Icons & manifest -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/icon-180.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Ibrahim Khan — Blog" href="/rss.xml">
+<!-- Fonts (font-display: swap via &display=swap) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Lazy 3D import map -->
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<!-- Theme: prevent FOUC -->
+<script>(function(){try{var t=localStorage.getItem('ik-theme');if(!t){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --font-display:"Space Grotesk",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --fs-sm:clamp(.8rem,.78rem + .1vw,.875rem);
+  --fs-base:clamp(.95rem,.92rem + .2vw,1.0625rem);
+  --fs-lg:clamp(1.1rem,1rem + .5vw,1.3rem);
+  --fs-xl:clamp(1.35rem,1.1rem + 1.2vw,1.9rem);
+  --fs-2xl:clamp(1.9rem,1.4rem + 2.6vw,3.4rem);
+  --fs-hero:clamp(2.4rem,1.55rem + 4.6vw,5rem);
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem; --sp-6:1.5rem; --sp-8:2rem; --sp-10:2.5rem; --sp-12:3rem;
+  --sp-section:clamp(5rem,4rem + 6vw,9rem);
+  --r-sm:.625rem; --r-md:1rem; --r-lg:1.5rem; --r-full:999px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:150ms; --t-med:280ms; --t-slow:600ms;
+  --wrap:72rem;
+}
+:root,:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0a0b0f; --bg-2:#0e1118; --surface:#11141c; --surface-2:#171b26;
+  --line:rgba(148,163,184,.16); --line-strong:rgba(148,163,184,.3);
+  --text:#eef1f7; --muted:#a0a9ba; --faint:#6e7788;
+  --accent:#f2a93b; --accent-2:#ffc96a; --accent-ink:#1a1204;
+  --accent-soft:rgba(242,169,59,.1); --glow:rgba(242,169,59,.22);
+  --steel:#8ea0c2; --wa:#1fce6d;
+  --shadow:0 24px 64px -28px rgba(0,0,0,.75);
+  --shadow-sm:0 10px 30px -14px rgba(0,0,0,.6);
+  --nav-bg:rgba(10,11,15,.72);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f7f5f0; --bg-2:#fdfcfa; --surface:#ffffff; --surface-2:#f1eee7;
+  --line:rgba(23,28,40,.13); --line-strong:rgba(23,28,40,.28);
+  --text:#14171d; --muted:#4d5563; --faint:#7a8290;
+  --accent:#9a5f08; --accent-2:#7c4c06; --accent-ink:#fff8ec;
+  --accent-soft:rgba(154,95,8,.1); --glow:rgba(154,95,8,.18);
+  --steel:#4d648d; --wa:#128a4c;
+  --shadow:0 24px 60px -28px rgba(23,28,40,.22);
+  --shadow-sm:0 10px 26px -14px rgba(23,28,40,.18);
+  --nav-bg:rgba(247,245,240,.78);
+}
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem;overflow-x:clip}
+body{
+  font-family:var(--font-body);font-size:var(--fs-base);line-height:1.7;
+  background:var(--bg);color:var(--text);overflow-x:clip;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  transition:background var(--t-med) var(--ease),color var(--t-med) var(--ease);
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+.section{padding-block:var(--sp-section)}
+[id]{scroll-margin-top:5.5rem}
+/* Grain texture */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:120;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");}
+/* Skip link */
+.skip{position:fixed;top:.75rem;left:.75rem;z-index:200;background:var(--accent);color:var(--accent-ink);
+  padding:.7rem 1.1rem;border-radius:var(--r-sm);font-weight:600;transform:translateY(-200%);transition:transform var(--t-fast) var(--ease)}
+.skip:focus-visible{transform:none;outline-offset:2px}
+/* ============ BUTTONS ============ */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;min-height:44px;
+  padding:.85rem 1.6rem;border-radius:var(--r-full);font-weight:600;font-size:var(--fs-sm);
+  letter-spacing:.02em;transition:transform var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease),background var(--t-med) var(--ease),border-color var(--t-med) var(--ease);will-change:transform}
+.btn .lucide{width:1.1rem;height:1.1rem;flex:none}
+.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 28px -8px var(--glow)}
+.btn-primary:hover{box-shadow:0 14px 38px -8px var(--glow)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-wa{background:var(--wa);color:#06150c;box-shadow:0 10px 30px -10px rgba(31,206,109,.5)}
+/* ============ HEADER ============ */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:110;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.site-header{position:fixed;top:0;inset-inline:0;z-index:100;transition:background var(--t-med) var(--ease),border-color var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease);border-bottom:1px solid transparent}
+.site-header.scrolled{background:var(--nav-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.5rem}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+.brand-mark{display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:.7rem;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);font-size:.85rem;box-shadow:0 6px 18px -6px var(--glow)}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;padding:0}
+.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:.45rem .85rem;border-radius:var(--r-full);font-size:var(--fs-sm);color:var(--muted);transition:color var(--t-fast),background var(--t-fast)}
+.nav-links a:hover{color:var(--text);background:var(--accent-soft)}
+.nav-cta{display:flex;align-items:center;gap:.6rem}
+.icon-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r-full);border:1px solid var(--line);color:var(--muted);transition:color var(--t-fast),border-color var(--t-fast)}
+.icon-btn:hover{color:var(--accent);border-color:var(--accent)}
+.icon-btn .lucide{width:1.15rem;height:1.15rem}
+.theme-icon-light{display:none}
+[data-theme="light"] .theme-icon-dark{display:none}
+[data-theme="light"] .theme-icon-light{display:block}
+.nav-toggle{display:none}
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;overflow:clip;isolation:isolate}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:0;transition:opacity 1.2s ease;display:none}
+body.use-3d #hero-canvas{display:block;opacity:1}
+.hero-fallback{position:absolute;inset:0;z-index:-2;
+  background:
+   radial-gradient(52rem 30rem at 78% 18%,var(--accent-soft),transparent 60%),
+   radial-gradient(40rem 26rem at 12% 82%,rgba(142,160,194,.09),transparent 60%),
+   linear-gradient(180deg,var(--bg-2),var(--bg));}
+body:not(.use-3d) .hero-fallback{animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{background-position:4% 6%,-3% -4%,0 0}}
+.hero-inner{padding-top:6rem;padding-bottom:4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:var(--fs-sm);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--accent)}
+.hero h1{font-size:var(--fs-hero);font-weight:700;max-width:16ch;margin-top:1.2rem}
+.hero h1 .hl{position:relative;white-space:nowrap;color:var(--accent)}
+.hero h1 .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2) 55%,var(--steel));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:56ch;margin-top:1.4rem;font-size:var(--fs-lg);color:var(--muted)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;list-style:none;padding:0;margin-top:2.6rem;color:var(--faint);font-size:var(--fs-sm)}
+.hero-meta li{display:flex;align-items:center;gap:.5rem}
+.hero-meta .lucide{width:.95rem;height:.95rem;color:var(--accent)}
+.pulse-dot{position:relative;width:.55rem;height:.55rem;border-radius:50%;background:#31d07c;flex:none}
+.pulse-dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #31d07c;animation:pulse 2s var(--ease) infinite}
+@keyframes pulse{to{transform:scale(1.9);opacity:0}}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--faint);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+.scroll-hint .lucide{width:1rem;height:1rem;animation:bob 2.2s var(--ease) infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+/* ============ MARQUEE ============ */
+.marquee{border-block:1px solid var(--line);padding-block:1rem;overflow:clip;background:var(--bg-2)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track span{display:inline-flex;align-items:center;gap:1.1rem;padding-inline:1.1rem;font-family:var(--font-display);font-size:var(--fs-sm);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.marquee-track .lucide{width:.8rem;height:.8rem;color:var(--accent)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* ============ SECTION HEADS ============ */
+.sec-head{display:grid;gap:1rem;margin-bottom:clamp(2rem,1rem + 3vw,3.5rem)}
+.sec-index{font-family:var(--font-display);font-size:var(--fs-sm);letter-spacing:.2em;color:var(--faint)}
+.sec-index b{color:var(--accent);font-weight:600}
+.sec-head h2{font-size:var(--fs-2xl);max-width:20ch}
+.sec-head p{max-width:60ch;color:var(--muted)}
+/* ============ REVEAL ============ */
+.reveal{opacity:0;translate:0 26px;transition:opacity .8s var(--ease),translate .8s var(--ease)}
+.reveal.in{opacity:1;translate:0 0}
+.reveal[data-delay="1"]{transition-delay:.1s}.reveal[data-delay="2"]{transition-delay:.2s}.reveal[data-delay="3"]{transition-delay:.3s}.reveal[data-delay="4"]{transition-delay:.4s}
+/* ============ ABOUT ============ */
+.about-grid{display:grid;gap:3rem;align-items:start}
+@media(min-width:56rem){.about-grid{grid-template-columns:minmax(0,26rem) 1fr}}
+.portrait{position:relative;aspect-ratio:560/640;border-radius:var(--r-lg);overflow:clip;border:1px solid var(--line);background:
+  radial-gradient(120% 90% at 20% 0%,var(--accent-soft),transparent 55%),var(--surface)}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,11,15,.55));pointer-events:none}
+.portrait-mono{position:absolute;inset:0;display:none;place-items:center;font-family:var(--font-display);font-size:clamp(5rem,18vw,9rem);font-weight:700;color:var(--accent-soft);-webkit-text-stroke:1.5px var(--accent);letter-spacing:-.04em}
+.portrait.no-photo img{display:none}
+.portrait.no-photo .portrait-mono{display:grid}
+.portrait-tag{position:absolute;left:1rem;bottom:1rem;z-index:2;display:flex;align-items:center;gap:.6rem;background:var(--nav-bg);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r-full);padding:.55rem 1rem;font-size:var(--fs-sm);font-weight:600}
+.about-body h3{font-size:var(--fs-xl);margin-bottom:1rem}
+.about-body p{color:var(--muted);margin-bottom:1.1rem}
+.about-body p b{color:var(--text)}
+.fact-list{display:grid;gap:.7rem;list-style:none;padding:0;margin:1.6rem 0}
+.fact-list li{display:flex;gap:.8rem;align-items:flex-start;color:var(--muted);font-size:var(--fs-sm)}
+.fact-list .lucide{width:1.05rem;height:1.05rem;color:var(--accent);flex:none;margin-top:.28rem}
+.fact-list b{color:var(--text);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:clip;margin-top:2rem}
+.stat{background:var(--surface);padding:1.4rem 1rem;text-align:center}
+.stat b{display:block;font-family:var(--font-display);font-size:clamp(1.7rem,4vw,2.4rem);color:var(--accent);font-weight:700}
+.stat span{font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+/* ============ CARDS ============ */
+.cards{display:grid;gap:1.2rem}
+@media(min-width:44rem){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:64rem){.cards.three{grid-template-columns:repeat(3,1fr)}}
+.card{position:relative;padding:clamp(1.4rem,2.5vw,2rem);border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(160deg,var(--surface),var(--bg-2));
+  transition:transform var(--t-med) var(--ease),border-color var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease);transform-style:preserve-3d}
+.card:hover{border-color:var(--accent);box-shadow:var(--shadow-sm)}
+.card-icon{display:grid;place-items:center;width:3.2rem;height:3.2rem;border-radius:1rem;background:var(--accent-soft);color:var(--accent);margin-bottom:1.2rem}
+.card-icon .lucide{width:1.5rem;height:1.5rem}
+.card h3{font-size:var(--fs-lg);margin-bottom:.7rem}
+.card p{color:var(--muted);font-size:var(--fs-sm)}
+.card ul{list-style:none;padding:0;margin-top:1rem;display:grid;gap:.5rem}
+.card li{display:flex;gap:.6rem;align-items:flex-start;color:var(--muted);font-size:var(--fs-sm)}
+.card li .lucide{width:.95rem;height:.95rem;color:var(--accent);flex:none;margin-top:.3rem}
+.card .card-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.3rem;font-size:var(--fs-sm);font-weight:600;color:var(--accent)}
+.card .card-link .lucide{width:1rem;height:1rem;transition:translate var(--t-fast) var(--ease)}
+.card:hover .card-link .lucide{translate:4px 0}
+/* ============ SKILLS ============ */
+.skills-grid{display:grid;gap:1.2rem}
+@media(min-width:56rem){.skills-grid{grid-template-columns:repeat(3,1fr)}}
+.skill-group{border:1px solid var(--line);border-radius:var(--r-lg);padding:1.6rem;background:var(--surface)}
+.skill-group h3{display:flex;align-items:center;gap:.6rem;font-size:1rem;margin-bottom:1.1rem}
+.skill-group h3 .lucide{width:1.15rem;height:1.15rem;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{padding:.45rem .9rem;border:1px solid var(--line);border-radius:var(--r-full);font-size:var(--fs-sm);color:var(--muted);transition:all var(--t-fast) var(--ease)}
+.chips li:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.certs{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:44rem){.certs{grid-template-columns:repeat(3,1fr)}}
+.cert{display:flex;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:var(--r-md);padding:1.1rem 1.3rem;background:var(--bg-2)}
+.cert .lucide{width:1.6rem;height:1.6rem;color:var(--accent);flex:none}
+.cert b{display:block;font-size:var(--fs-sm)}
+.cert span{font-size:.8rem;color:var(--faint)}
+.edu{margin-top:1.2rem}
+/* ============ CASE STUDY ============ */
+.case{border:1px solid var(--line);border-radius:var(--r-lg);overflow:clip;background:linear-gradient(150deg,var(--surface),var(--bg-2))}
+.case-visual{position:relative;min-height:16rem;display:grid;place-items:center;overflow:clip;
+  background:radial-gradient(80% 120% at 80% 10%,var(--accent-soft),transparent 60%),radial-gradient(60% 100% at 10% 90%,rgba(142,160,194,.12),transparent 60%),var(--bg-2)}
+.case-visual .big-icon{width:5rem;height:5rem;color:var(--accent);opacity:.9}
+.case-visual::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line-strong) 1px,transparent 1px);background-size:26px 26px;opacity:.5;mask-image:radial-gradient(70% 70% at 50% 50%,black,transparent)}
+.case-body{padding:clamp(1.6rem,3vw,2.6rem)}
+.case-tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin-bottom:1rem}
+.case-tags li{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-soft);background:var(--accent-soft);padding:.3rem .7rem;border-radius:var(--r-full)}
+.case-body h3{font-size:var(--fs-xl);margin-bottom:.9rem}
+.case-body p{color:var(--muted)}
+.case-dl{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:clip;margin-top:1.5rem}
+@media(min-width:40rem){.case-dl{grid-template-columns:repeat(3,1fr)}}
+.case-dl div{background:var(--surface);padding:1rem 1.2rem}
+.case-dl dt{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.case-dl dd{font-size:var(--fs-sm);font-weight:600}
+.case-note{margin-top:1.2rem;font-size:.82rem;color:var(--faint);border-left:2px solid var(--accent);padding-left:1rem}
+.next-project{margin-top:1.2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;border:1px dashed var(--line-strong);border-radius:var(--r-lg);padding:1.5rem 1.8rem}
+.next-project h3{font-size:var(--fs-lg)}
+.next-project p{color:var(--muted);font-size:var(--fs-sm)}
+/* ============ PROCESS ============ */
+.steps{display:grid;gap:1.2rem;counter-reset:step}
+@media(min-width:44rem){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:64rem){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{position:relative;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.8rem 1.5rem;background:var(--surface);transition:border-color var(--t-med) var(--ease),transform var(--t-med) var(--ease)}
+.step:hover{border-color:var(--accent);transform:translateY(-4px)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--accent);display:block;margin-bottom:1rem}
+.step h3{font-size:1.05rem;margin-bottom:.6rem}
+.step p{color:var(--muted);font-size:var(--fs-sm)}
+/* ============ FAQ ============ */
+.faq-list{display:grid;gap:.8rem;max-width:52rem}
+.faq-item{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);overflow:clip;transition:border-color var(--t-med) var(--ease)}
+.faq-item[open]{border-color:var(--accent)}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:44px;padding:1.1rem 1.3rem;cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:1rem;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .lucide{width:1.2rem;height:1.2rem;color:var(--accent);flex:none;transition:rotate var(--t-med) var(--ease)}
+.faq-item[open] summary .lucide{rotate:180deg}
+.faq-a{padding:0 1.3rem 1.3rem}
+.faq-a p{color:var(--muted);font-size:var(--fs-sm)}
+.faq-item[open] .faq-a{animation:faqIn .4s var(--ease)}
+@keyframes faqIn{from{opacity:0;translate:0 -8px}}
+/* ============ BLOG ============ */
+.blog-tools{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:2rem}
+.search-box{position:relative;flex:1 1 16rem;min-width:0}
+.search-box .lucide{position:absolute;left:1rem;top:50%;translate:0 -50%;width:1.05rem;height:1.05rem;color:var(--faint);pointer-events:none}
+.search-box input{width:100%;min-height:44px;padding:.8rem 1rem .8rem 2.8rem;border:1px solid var(--line);border-radius:var(--r-full);background:var(--surface);color:var(--text);font:inherit;font-size:var(--fs-sm)}
+.search-box input::placeholder{color:var(--faint)}
+.tag-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag-pill{min-height:44px;display:inline-flex;align-items:center;padding:.5rem 1rem;border:1px solid var(--line);border-radius:var(--r-full);font-size:var(--fs-sm);color:var(--muted);transition:all var(--t-fast)}
+.tag-pill:hover{color:var(--text);border-color:var(--accent)}
+.tag-pill[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.blog-count{font-size:var(--fs-sm);color:var(--faint);margin-bottom:1rem}
+.posts{display:grid;gap:1.2rem}
+@media(min-width:44rem){.posts{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:64rem){.posts{grid-template-columns:repeat(3,1fr)}}
+.post{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r-lg);overflow:clip;background:var(--surface);transition:transform var(--t-med) var(--ease),border-color var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease)}
+.post:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow-sm)}
+.post-cover{position:relative;aspect-ratio:16/9;display:grid;place-items:center;overflow:clip}
+.post-cover .lucide{width:3rem;height:3rem;color:var(--accent);opacity:.85;position:relative;z-index:1}
+.post-cover::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line-strong) 1px,transparent 1px);background-size:22px 22px;opacity:.45;mask-image:radial-gradient(75% 75% at 50% 50%,black,transparent)}
+.cover-a{background:radial-gradient(100% 140% at 80% 0%,var(--accent-soft),transparent 55%),var(--bg-2)}
+.cover-b{background:radial-gradient(100% 140% at 16% 100%,rgba(142,160,194,.16),transparent 55%),var(--bg-2)}
+.cover-c{background:radial-gradient(120% 150% at 50% 120%,var(--accent-soft),transparent 60%),radial-gradient(80% 100% at 90% 0%,rgba(142,160,194,.14),transparent 55%),var(--bg-2)}
+.post-body{display:flex;flex-direction:column;gap:.7rem;padding:1.4rem;flex:1}
+.post-meta{display:flex;gap:.9rem;font-size:.78rem;color:var(--faint)}
+.post h3{font-size:1.08rem;line-height:1.3}
+.post h3 a:hover{color:var(--accent)}
+.post p{color:var(--muted);font-size:var(--fs-sm);flex:1}
+.post-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.post-tags span{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:var(--r-full);padding:.2rem .6rem}
+.post-link{display:inline-flex;align-items:center;gap:.4rem;font-size:var(--fs-sm);font-weight:600;color:var(--accent);margin-top:.3rem}
+.no-results{display:none;border:1px dashed var(--line-strong);border-radius:var(--r-md);padding:2.5rem;text-align:center;color:var(--muted)}
+.pager{display:flex;gap:.5rem;justify-content:center;margin-top:2rem}
+.pager button{min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:var(--r-full);color:var(--muted)}
+.pager button[aria-current="page"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;gap:2rem}
+@media(min-width:60rem){.contact-grid{grid-template-columns:1.1fr .9fr}}
+.contact-card{border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(1.5rem,3vw,2.4rem);background:linear-gradient(160deg,var(--surface),var(--bg-2))}
+.contact-card h3{font-size:var(--fs-xl);margin-bottom:.8rem}
+.contact-card>p{color:var(--muted);margin-bottom:1.6rem}
+.field{display:grid;gap:.4rem;margin-bottom:1.1rem}
+.field label{font-size:var(--fs-sm);font-weight:600}
+.field input,.field textarea{width:100%;min-height:44px;padding:.8rem 1rem;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--bg-2);color:var(--text);font:inherit;font-size:var(--fs-sm);transition:border-color var(--t-fast)}
+.field textarea{min-height:8.5rem;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--accent);outline:none}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.form-note{font-size:.78rem;color:var(--faint);margin-top:1rem}
+.contact-side{display:grid;gap:1.2rem;align-content:start}
+.wa-cta{display:flex;flex-direction:column;gap:1rem;border:1px solid var(--wa);border-radius:var(--r-lg);padding:1.8rem;background:linear-gradient(150deg,rgba(31,206,109,.1),transparent 45%),var(--surface)}
+.wa-cta h3{display:flex;align-items:center;gap:.6rem;font-size:var(--fs-lg)}
+.wa-cta h3 .lucide{width:1.4rem;height:1.4rem;color:var(--wa)}
+.wa-cta p{color:var(--muted);font-size:var(--fs-sm)}
+.contact-links{display:grid;gap:.7rem}
+.contact-link{display:flex;align-items:center;gap:1rem;border:1px solid var(--line);border-radius:var(--r-md);padding:1rem 1.2rem;background:var(--surface);transition:border-color var(--t-fast),transform var(--t-fast) var(--ease)}
+.contact-link:hover{border-color:var(--accent);transform:translateX(4px)}
+.contact-link .lucide{width:1.25rem;height:1.25rem;color:var(--accent);flex:none}
+.contact-link b{display:block;font-size:var(--fs-sm)}
+.contact-link span{font-size:.8rem;color:var(--faint);word-break:break-all}
+/* ============ FOOTER ============ */
+.site-footer{border-top:1px solid var(--line);background:var(--bg-2);padding-block:3rem 6.5rem}
+@media(min-width:48rem){.site-footer{padding-bottom:3rem}}
+.footer-grid{display:grid;gap:2rem}
+@media(min-width:56rem){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.footer-grid h2{font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.footer-grid ul{list-style:none;padding:0;display:grid;gap:.5rem}
+.footer-grid ul a{color:var(--muted);font-size:var(--fs-sm);min-height:24px;display:inline-flex;align-items:center}
+.footer-grid ul a:hover{color:var(--accent)}
+.footer-about p{color:var(--muted);font-size:var(--fs-sm);max-width:38ch;margin-top:.8rem}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--faint);font-size:.8rem}
+/* ============ FAB & TO-TOP ============ */
+.wa-fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:90;display:none;place-items:center;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--wa);color:#06150c;box-shadow:0 12px 32px -8px rgba(31,206,109,.55);transition:transform var(--t-med) var(--ease)}
+.wa-fab .lucide{width:1.5rem;height:1.5rem}
+.wa-fab:hover{transform:scale(1.08)}
+@media(max-width:47.99rem){.wa-fab{display:grid}}
+.to-top{position:fixed;right:1.1rem;bottom:calc(5.4rem + env(safe-area-inset-bottom));z-index:89;display:grid;place-items:center;width:2.8rem;height:2.8rem;border-radius:50%;border:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(10px);color:var(--muted);opacity:0;pointer-events:none;transition:opacity var(--t-med),transform var(--t-med) var(--ease)}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{color:var(--accent);transform:translateY(-3px)}
+.to-top .lucide{width:1.15rem;height:1.15rem}
+@media(min-width:48rem){.to-top{bottom:1.6rem}}
+/* ============ RESPONSIVE NAV ============ */
+@media(max-width:47.99rem){
+  .nav-links{position:fixed;inset:4.5rem .75rem auto;flex-direction:column;align-items:stretch;gap:.3rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:.8rem;box-shadow:var(--shadow);opacity:0;translate:0 -12px;pointer-events:none;transition:opacity var(--t-fast) var(--ease),translate var(--t-fast) var(--ease)}
+  .nav-links.open{opacity:1;translate:0 0;pointer-events:auto}
+  .nav-links a{width:100%}
+  .nav-cta .btn{display:none}
+  .nav-toggle{display:grid}
+}
+/* ============ REDUCED MOTION ============ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;translate:0 0}
+  #hero-canvas{display:none!important}
+}
+</style>
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Person","@id":"https://imibrahimkhan.com/#person","name":"Ibrahim Khan","givenName":"Ibrahim","familyName":"Khan","jobTitle":"Full Stack Web Developer & Email Marketing Expert","description":"Full-Stack Web Developer and Email Marketing Expert based in Cox's Bazar, Bangladesh. Builds high-converting websites and Klaviyo/Mailchimp email campaigns.","url":"https://imibrahimkhan.com/","image":"https://imibrahimkhan.com/assets/img/ibrahim-khan.png","email":"mailto:ibrahimcox71@yahoo.com","address":{"@type":"PostalAddress","addressLocality":"Cox's Bazar","addressRegion":"Chattogram","addressCountry":"BD"},"sameAs":["https://www.linkedin.com/in/imibrahimkhan"],"knowsAbout":["Full-Stack Web Development","JavaScript","UX Research","UX Design","Email Marketing","Klaviyo","Mailchimp","Marketing Automation","Segmentation","A/B Testing"],"alumniOf":{"@type":"CollegeOrUniversity","name":"National University, Bangladesh"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Fundamentals of Digital Marketing"},{"@type":"EducationalOccupationalCredential","name":"Email Marketing"},{"@type":"EducationalOccupationalCredential","name":"EF SET English Certificate"}]},
+{"@type":"ProfessionalService","@id":"https://imibrahimkhan.com/#service","name":"Ibrahim Khan — Freelance Web Development & Email Marketing","url":"https://imibrahimkhan.com/","founder":{"@id":"https://imibrahimkhan.com/#person"},"areaServed":"Worldwide (remote)","address":{"@type":"PostalAddress","addressLocality":"Cox's Bazar","addressRegion":"Chattogram","addressCountry":"BD"},"email":"mailto:ibrahimcox71@yahoo.com","serviceType":["Full-Stack Web Development","Email Marketing","Klaviyo & Mailchimp Email Flows","Marketing Automation","UX Research & Design"],"priceRange":"Project-based — contact for a quote"},
+{"@type":"WebSite","@id":"https://imibrahimkhan.com/#website","url":"https://imibrahimkhan.com/","name":"Ibrahim Khan — Web Developer & Email Marketing Expert","author":{"@id":"https://imibrahimkhan.com/#person"},"inLanguage":"en"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://imibrahimkhan.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://imibrahimkhan.com/blog/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What services does Ibrahim Khan offer?","acceptedAnswer":{"@type":"Answer","text":"Ibrahim Khan offers full-stack web development (fast, accessible, SEO-ready websites built with hand-coded HTML, CSS and JavaScript), email marketing on Klaviyo and Mailchimp (welcome flows, abandoned cart flows, newsletters, automation, segmentation and A/B testing), and UX research and design."}},
+{"@type":"Question","name":"How do I hire Ibrahim Khan for a project?","acceptedAnswer":{"@type":"Answer","text":"The fastest way is WhatsApp — use the Hire Me button on this page to start a chat. You can also email ibrahimcox71@yahoo.com or connect on LinkedIn. Ibrahim is based in Cox's Bazar, Bangladesh and is available for freelance projects worldwide."}},
+{"@type":"Question","name":"Which email marketing tools does Ibrahim Khan work with?","acceptedAnswer":{"@type":"Answer","text":"Ibrahim works with Klaviyo and Mailchimp. He builds email flows such as welcome series and abandoned cart flows, sends newsletters, and improves campaign performance through automation, list segmentation and structured A/B testing."}},
+{"@type":"Question","name":"Can Ibrahim build both my website and my email marketing system?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ibrahim is a full-stack developer and email marketing expert, so he can design and build your website, then connect it to Klaviyo or Mailchimp with sign-up forms, flows and campaigns — one person accountable for the whole funnel."}},
+{"@type":"Question","name":"Where is Ibrahim Khan located?","acceptedAnswer":{"@type":"Answer","text":"Ibrahim Khan is based in Cox's Bazar, Chattogram, Bangladesh, and works with clients remotely as a freelancer."}}
+]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Ibrahim Khan — home">
+      <span class="brand-mark" aria-hidden="true">IK</span>
+      <span>Ibrahim Khan</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <i data-lucide="moon-star" class="theme-icon-dark" aria-hidden="true"></i>
+        <i data-lucide="sun" class="theme-icon-light" aria-hidden="true"></i>
+      </button>
+      <a class="btn btn-primary" data-magnetic href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+        <i data-lucide="message-circle" aria-hidden="true"></i>Hire Me
+      </a>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-label="Introduction">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-fallback" aria-hidden="true"></div>
+  <div class="hero-inner wrap">
+    <p class="eyebrow reveal">Ibrahim Khan · Web Developer &amp; Email Marketer</p>
+    <h1 class="reveal" data-delay="1">I build <span class="hl">high-converting</span> websites and <span class="grad">email campaigns</span> that grow your sales.</h1>
+    <p class="lede reveal" data-delay="2">Full-Stack Web Developer &amp; Email Marketing Expert based in Cox's Bazar, Bangladesh — helping brands turn visitors into customers with hand-coded websites and Klaviyo/Mailchimp email flows.</p>
+    <div class="hero-cta reveal" data-delay="3">
+      <a class="btn btn-primary" data-magnetic href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+        <i data-lucide="message-circle" aria-hidden="true"></i>Hire Me on WhatsApp
+      </a>
+      <a class="btn btn-ghost" data-magnetic href="#work"><i data-lucide="briefcase" aria-hidden="true"></i>View my work</a>
+    </div>
+    <ul class="hero-meta reveal" data-delay="4">
+      <li><span class="pulse-dot" aria-hidden="true"></span>Available for freelance projects</li>
+      <li><i data-lucide="map-pin" aria-hidden="true"></i>Cox's Bazar, Chattogram, Bangladesh</li>
+      <li><i data-lucide="languages" aria-hidden="true"></i>English — EF SET certified</li>
+    </ul>
+  </div>
+  <a class="scroll-hint" href="#about" aria-label="Scroll to about section">Scroll<i data-lucide="arrow-down" aria-hidden="true"></i></a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><i data-lucide="sparkles"></i>Available for freelance</span><span><i data-lucide="code-2"></i>Full-Stack Development</span><span><i data-lucide="mail"></i>Klaviyo &amp; Mailchimp</span><span><i data-lucide="git-branch"></i>Email Automation</span><span><i data-lucide="flask-conical"></i>A/B Testing</span><span><i data-lucide="layers"></i>UX Design</span>
+    <span><i data-lucide="sparkles"></i>Available for freelance</span><span><i data-lucide="code-2"></i>Full-Stack Development</span><span><i data-lucide="mail"></i>Klaviyo &amp; Mailchimp</span><span><i data-lucide="git-branch"></i>Email Automation</span><span><i data-lucide="flask-conical"></i>A/B Testing</span><span><i data-lucide="layers"></i>UX Design</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 01 )</b> — About</p>
+      <h2 id="about-h">Meet your developer &amp; email marketer</h2>
+    </div>
+    <div class="about-grid">
+      <figure class="portrait reveal" data-tilt>
+        <span class="portrait-mono" aria-hidden="true">IK</span>
+        <picture>
+          <source type="image/avif" srcset="/assets/img/ibrahim-khan-420.avif 420w, /assets/img/ibrahim-khan-840.avif 840w" sizes="(min-width:56rem) 30rem, 90vw">
+          <source type="image/webp" srcset="/assets/img/ibrahim-khan-420.webp 420w, /assets/img/ibrahim-khan-840.webp 840w" sizes="(min-width:56rem) 30rem, 90vw">
+          <img src="/assets/img/ibrahim-khan.png" width="560" height="640"
+               alt="Portrait of Ibrahim Khan, Full-Stack Web Developer and Email Marketing Expert from Cox's Bazar, Bangladesh"
+               loading="lazy" decoding="async" fetchpriority="low"
+               onerror="this.closest('.portrait').classList.add('no-photo')">
+        </picture>
+        <figcaption class="portrait-tag"><span class="pulse-dot" aria-hidden="true"></span>Ibrahim Khan · Bangladesh</figcaption>
+      </figure>
+      <div class="about-body">
+        <h3 class="reveal">Hello — I'm Ibrahim.</h3>
+        <p class="reveal"><b>Ibrahim Khan is a Full-Stack Web Developer and Email Marketing Expert based in Cox's Bazar, Chattogram, Bangladesh.</b> He builds fast, hand-coded websites and data-informed email campaigns for businesses that want more sales, and he is available for freelance projects worldwide.</p>
+        <p class="reveal">My work sits at the intersection of engineering and marketing. On the web side, I design and build accessible, SEO-ready websites with clean, dependency-light JavaScript. On the email side, I architect Klaviyo and Mailchimp systems — welcome flows, abandoned cart flows, newsletters, automation, segmentation, and A/B testing programs that keep improving after launch.</p>
+        <p class="reveal">Recently, I built and optimized the email marketing system for a jewelry brand — improving campaign performance through smarter list segmentation and structured A/B testing. Before any build, I ground decisions in UX research so the result serves real customers, not assumptions.</p>
+        <ul class="fact-list reveal">
+          <li><i data-lucide="graduation-cap" aria-hidden="true"></i><span><b>Bachelor's degree</b> — National University, Bangladesh (2016–2020)</span></li>
+          <li><i data-lucide="badge-check" aria-hidden="true"></i><span><b>Certified</b> — Fundamentals of Digital Marketing · Email Marketing · EF SET English</span></li>
+          <li><i data-lucide="globe" aria-hidden="true"></i><span><b>Remote-first</b> — working with clients worldwide from Cox's Bazar</span></li>
+        </ul>
+        <div class="stats reveal" role="group" aria-label="Quick facts">
+          <div class="stat"><b><span data-count="9">0</span></b><span>Core skills &amp; tools</span></div>
+          <div class="stat"><b><span data-count="3">0</span></b><span>Professional certifications</span></div>
+          <div class="stat"><b><span data-count="3">0</span></b><span>Email flow types built</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services" aria-labelledby="services-h" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 02 )</b> — Services</p>
+      <h2 id="services-h">What I can do for you</h2>
+      <p>Three connected services, one goal: turning your traffic into revenue. Every engagement starts with a clear answer to "how will this grow the business?"</p>
+    </div>
+    <div class="cards three">
+      <article class="card reveal" data-tilt>
+        <div class="card-icon"><i data-lucide="code-2" aria-hidden="true"></i></div>
+        <h3>Full-Stack Web Development</h3>
+        <p>I design and build fast, accessible, SEO-ready websites with hand-coded HTML, CSS and vanilla JavaScript. The result is a lightweight site that loads in a blink, ranks in search, and converts visitors — without bloated frameworks or page-builder lock-in.</p>
+        <ul>
+          <li><i data-lucide="check" aria-hidden="true"></i>Hand-coded, dependency-light front ends</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Core Web Vitals &amp; technical SEO baked in</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Accessible (WCAG 2.1 AA) by default</li>
+        </ul>
+        <a class="card-link" href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">Discuss a website <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      </article>
+      <article class="card reveal" data-tilt data-delay="1">
+        <div class="card-icon"><i data-lucide="mail" aria-hidden="true"></i></div>
+        <h3>Email Marketing — Klaviyo &amp; Mailchimp</h3>
+        <p>I build email marketing systems that sell on autopilot: welcome and abandoned cart flows, newsletters, automation, list segmentation and A/B testing — set up properly inside Klaviyo or Mailchimp and tied to your store or website.</p>
+        <ul>
+          <li><i data-lucide="check" aria-hidden="true"></i>Welcome, abandoned cart &amp; newsletter flows</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Segmentation for the right message per customer</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Structured A/B testing that compounds</li>
+        </ul>
+        <a class="card-link" href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">Discuss email marketing <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      </article>
+      <article class="card reveal" data-tilt data-delay="2">
+        <div class="card-icon"><i data-lucide="layers" aria-hidden="true"></i></div>
+        <h3>UX Research &amp; Design</h3>
+        <p>I research how your customers actually think and behave, then translate that into clean interfaces and messaging. Research first, design second — so every page has a job and every button earns its place.</p>
+        <ul>
+          <li><i data-lucide="check" aria-hidden="true"></i>Customer research &amp; journey mapping</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Wireframes to polished UI design</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Conversion-focused page structure &amp; copy hierarchy</li>
+        </ul>
+        <a class="card-link" href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">Discuss UX &amp; design <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 03 )</b> — Skills &amp; Credentials</p>
+      <h2 id="skills-h">A toolkit built for growth</h2>
+    </div>
+    <div class="skills-grid">
+      <section class="skill-group reveal" aria-labelledby="sg-dev">
+        <h3 id="sg-dev"><i data-lucide="terminal" aria-hidden="true"></i>Development</h3>
+        <ul class="chips">
+          <li>Full-Stack Development</li><li>JavaScript</li><li>HTML5 &amp; CSS3</li><li>Three.js &amp; 3D</li><li>Web Performance</li><li>Technical SEO</li><li>Accessibility (WCAG)</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" data-delay="1" aria-labelledby="sg-email">
+        <h3 id="sg-email"><i data-lucide="mails" aria-hidden="true"></i>Email Marketing</h3>
+        <ul class="chips">
+          <li>Klaviyo</li><li>Mailchimp</li><li>Welcome Flows</li><li>Abandoned Cart Flows</li><li>Newsletters</li><li>Automation</li><li>Segmentation</li><li>A/B Testing</li>
+        </ul>
+      </section>
+      <section class="skill-group reveal" data-delay="2" aria-labelledby="sg-ux">
+        <h3 id="sg-ux"><i data-lucide="pen-tool" aria-hidden="true"></i>UX &amp; Strategy</h3>
+        <ul class="chips">
+          <li>UX Research</li><li>UX Design</li><li>Conversion Copywriting Structure</li><li>Customer Journey Mapping</li><li>Experiment Design</li>
+        </ul>
+      </section>
+    </div>
+    <div class="certs">
+      <div class="cert reveal"><i data-lucide="award" aria-hidden="true"></i><div><b>Fundamentals of Digital Marketing</b><span>Professional certification</span></div></div>
+      <div class="cert reveal" data-delay="1"><i data-lucide="award" aria-hidden="true"></i><div><b>Email Marketing</b><span>Professional certification</span></div></div>
+      <div class="cert reveal" data-delay="2"><i data-lucide="languages" aria-hidden="true"></i><div><b>EF SET English Certificate</b><span>English proficiency certification</span></div></div>
+    </div>
+    <div class="cert edu reveal"><i data-lucide="graduation-cap" aria-hidden="true"></i><div><b>Bachelor's Degree — National University, Bangladesh</b><span>2016 – 2020</span></div></div>
+  </div>
+</section>
+
+<!-- ============ WORK / CASE STUDY ============ -->
+<section class="section" id="work" aria-labelledby="work-h" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 04 )</b> — Selected Work</p>
+      <h2 id="work-h">Case study</h2>
+    </div>
+    <article class="case reveal">
+      <div class="case-visual" aria-hidden="true"><i data-lucide="gem" class="big-icon"></i></div>
+      <div class="case-body">
+        <ul class="case-tags"><li>Email Marketing</li><li>Klaviyo / Mailchimp</li><li>E-commerce</li></ul>
+        <h3>Email Marketing System for a Jewelry Brand</h3>
+        <p>A jewelry brand needed its email list to do more than send the occasional newsletter. I built the email marketing system from the ground up and then kept optimizing it — restructuring the list into meaningful segments and running structured A/B tests on campaigns. Campaign performance improved as emails became more relevant to each audience segment.</p>
+        <div class="case-dl">
+          <div><dt>Deliverables</dt><dd>Welcome &amp; abandoned cart flows, newsletters</dd></div>
+          <div><dt>Optimization</dt><dd>Smarter segmentation &amp; A/B testing program</dd></div>
+          <div><dt>Result</dt><dd>Improved campaign performance</dd></div>
+        </div>
+        <p class="case-note">Keep in mind — every list is different. What worked here was the process: research the audience, segment thoughtfully, test one variable at a time, and let the data decide.</p>
+      </div>
+    </article>
+    <div class="next-project reveal">
+      <div>
+        <h3>Your project could be next</h3>
+        <p>Tell me about your business and what you're trying to grow.</p>
+      </div>
+      <a class="btn btn-primary" data-magnetic href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener"><i data-lucide="message-circle" aria-hidden="true"></i>Start a project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process" aria-labelledby="process-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 05 )</b> — Process</p>
+      <h2 id="process-h">How we'll work together</h2>
+      <p>A simple, transparent process — you always know what's happening and why.</p>
+    </div>
+    <ol class="steps" style="list-style:none;padding:0">
+      <li class="step reveal"><h3>Discover &amp; research</h3><p>We map your goals, audience and competitors. I ask uncomfortable questions so the solution fits reality, not assumptions.</p></li>
+      <li class="step reveal" data-delay="1"><h3>Design the strategy</h3><p>Wireframes, page structure, message hierarchy — or email flow maps with triggers, timing and segment rules.</p></li>
+      <li class="step reveal" data-delay="2"><h3>Build &amp; integrate</h3><p>Hand-coded, accessible, fast implementation — and clean Klaviyo/Mailchimp setup connected to your site or store.</p></li>
+      <li class="step reveal" data-delay="3"><h3>Launch &amp; optimize</h3><p>We ship, measure, and iterate with A/B tests and segmentation refinements. The launch is the start, not the end.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" aria-labelledby="faq-h" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 06 )</b> — FAQ</p>
+      <h2 id="faq-h">Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary>What services does Ibrahim Khan offer?<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="faq-a"><p>Ibrahim Khan offers full-stack web development (fast, accessible, SEO-ready websites built with hand-coded HTML, CSS and JavaScript), email marketing on Klaviyo and Mailchimp (welcome flows, abandoned cart flows, newsletters, automation, segmentation and A/B testing), and UX research and design.</p></div></details>
+      <details class="faq-item"><summary>How do I hire you for a project?<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="faq-a"><p>The fastest way is WhatsApp — tap any green "Hire Me" button on this page and your message is pre-filled. You can also email <a href="mailto:ibrahimcox71@yahoo.com" style="color:var(--accent);text-decoration:underline">ibrahimcox71@yahoo.com</a> or connect on <a href="https://www.linkedin.com/in/imibrahimkhan" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">LinkedIn</a>. We'll discuss your goals, then I'll propose a plan and a project-based quote.</p></div></details>
+      <details class="faq-item"><summary>Which email marketing tools do you work with?<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="faq-a"><p>I work with Klaviyo and Mailchimp. I build email flows such as welcome series and abandoned cart flows, send newsletters, and improve campaign performance through automation, list segmentation and structured A/B testing.</p></div></details>
+      <details class="faq-item"><summary>Can you build both my website and my email system?<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="faq-a"><p>Yes — that's my strength. As a full-stack developer and email marketing expert, I can design and build your website, then connect it to Klaviyo or Mailchimp with sign-up forms, flows and campaigns. One person accountable for the whole funnel.</p></div></details>
+      <details class="faq-item"><summary>Where are you located and how do we communicate?<i data-lucide="chevron-down" aria-hidden="true"></i></summary><div class="faq-a"><p>I'm based in Cox's Bazar, Chattogram, Bangladesh, and I work with clients remotely worldwide. Day-to-day communication happens over WhatsApp and email, and I'm EF SET certified in English.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="section" id="blog" aria-labelledby="blog-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 07 )</b> — Blog</p>
+      <h2 id="blog-h">Notes on email &amp; the web</h2>
+      <p>Practical articles about email marketing and web development — written for business owners, not developers only.</p>
+    </div>
+    <div class="blog-tools reveal" role="search">
+      <div class="search-box">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <label for="blog-search" class="hp" style="position:absolute">Search articles</label>
+        <input id="blog-search" type="search" placeholder="Search articles…" autocomplete="off">
+      </div>
+      <div class="tag-pills" role="group" aria-label="Filter articles by tag">
+        <button class="tag-pill" type="button" data-tag="all" aria-pressed="true">All</button>
+        <button class="tag-pill" type="button" data-tag="email-marketing" aria-pressed="false">Email Marketing</button>
+        <button class="tag-pill" type="button" data-tag="web-development" aria-pressed="false">Web Development</button>
+      </div>
+    </div>
+    <p class="blog-count reveal" id="blog-count" role="status" aria-live="polite">Showing 3 articles</p>
+    <div class="posts" id="posts">
+      <article class="post reveal" data-post data-title="Welcome Email Flows Explained: What They Are and Why Your Store Needs One" data-tags="email-marketing automation klaviyo" data-desc="A welcome email flow is an automated series of emails sent to new subscribers in their first days on your list.">
+        <div class="post-cover cover-a" aria-hidden="true"><i data-lucide="mail-open"></i></div>
+        <div class="post-body">
+          <div class="post-meta"><span><time datetime="2025-11-18">Nov 18, 2025</time></span><span>6 min read</span></div>
+          <h3><a href="/blog/welcome-email-flows-explained/">Welcome Email Flows Explained: What They Are and Why Your Store Needs One</a></h3>
+          <p>A welcome email flow is an automated series of emails sent to new subscribers in their first days on your list. It matters because new subscribers are at peak interest — a good welcome flow introduces your brand, sets expectations and guides the first purchase.</p>
+          <div class="post-tags"><span>Email Marketing</span><span>Automation</span></div>
+          <a class="post-link" href="/blog/welcome-email-flows-explained/">Read article <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      <article class="post reveal" data-delay="1" data-post data-title="Klaviyo vs Mailchimp: An Honest Comparison for Small E-commerce Brands" data-tags="email-marketing klaviyo mailchimp tools" data-desc="Klaviyo vs Mailchimp: pick Klaviyo if you run a serious e-commerce store and want deep store data and flow logic.">
+        <div class="post-cover cover-b" aria-hidden="true"><i data-lucide="scale"></i></div>
+        <div class="post-body">
+          <div class="post-meta"><span><time datetime="2025-12-09">Dec 9, 2025</time></span><span>7 min read</span></div>
+          <h3><a href="/blog/klaviyo-vs-mailchimp/">Klaviyo vs Mailchimp: An Honest Comparison for Small E-commerce Brands</a></h3>
+          <p>Klaviyo is usually the better choice for e-commerce brands that want deep store integration, granular segments and behavior-based flows. Mailchimp suits smaller lists, simpler needs, and tighter starting budgets. The right pick depends on your store, not the hype.</p>
+          <div class="post-tags"><span>Klaviyo</span><span>Mailchimp</span></div>
+          <a class="post-link" href="/blog/klaviyo-vs-mailchimp/">Read article <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      <article class="post reveal" data-delay="2" data-post data-title="Core Web Vitals in Plain Language: A Checklist for Business Websites" data-tags="web-development performance seo" data-desc="Core Web Vitals are Google's three page-experience metrics: LCP (loading), INP (interactivity) and CLS (visual stability).">
+        <div class="post-cover cover-c" aria-hidden="true"><i data-lucide="gauge"></i></div>
+        <div class="post-body">
+          <div class="post-meta"><span><time datetime="2026-01-14">Jan 14, 2026</time></span><span>6 min read</span></div>
+          <h3><a href="/blog/core-web-vitals-checklist/">Core Web Vitals in Plain Language: A Checklist for Business Websites</a></h3>
+          <p>Core Web Vitals measure how your site feels to real visitors: loading (LCP under 2.5s), responsiveness (INP under 200ms) and visual stability (CLS under 0.1). Here's what each means and how a business website can pass them without an agency invoice.</p>
+          <div class="post-tags"><span>Web Development</span><span>Performance</span></div>
+          <a class="post-link" href="/blog/core-web-vitals-checklist/">Read article <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+    </div>
+    <div class="no-results" id="no-results" role="status">
+      <p>No articles match your search. Try a different keyword or clear the tag filter.</p>
+    </div>
+    <nav class="pager" id="pager" aria-label="Blog pagination" hidden></nav>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact" aria-labelledby="contact-h" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-index"><b>( 08 )</b> — Contact</p>
+      <h2 id="contact-h">Let's build something that sells</h2>
+      <p>Tell me about your project — or skip the form and message me directly on WhatsApp. I reply personally.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Project inquiry</h3>
+        <p>This form is delivered straight to my inbox (spam-protected). Prefer talking first? Use the WhatsApp button instead.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-message">Project details</label><textarea id="f-message" name="message" required placeholder="What are you building or growing? What does success look like?"></textarea></div>
+          <button class="btn btn-primary" type="submit" data-magnetic><i data-lucide="send" aria-hidden="true"></i>Send inquiry</button>
+          <p class="form-note">Protected by a honeypot field. No trackers, no newsletter sign-up — your message just reaches me.</p>
+        </form>
+      </div>
+      <aside class="contact-side">
+        <div class="wa-cta reveal" data-delay="1">
+          <h3><i data-lucide="message-circle" aria-hidden="true"></i>Fastest response</h3>
+          <p>WhatsApp is the quickest way to reach me. The message is pre-filled — just press send and say hi.</p>
+          <a class="btn btn-wa" data-magnetic href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener"><i data-lucide="message-circle" aria-hidden="true"></i>Hire Me on WhatsApp</a>
+        </div>
+        <div class="contact-links reveal" data-delay="2">
+          <a class="contact-link" href="mailto:ibrahimcox71@yahoo.com">
+            <i data-lucide="at-sign" aria-hidden="true"></i>
+            <div><b>Email</b><span>ibrahimcox71@yahoo.com</span></div>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/imibrahimkhan" target="_blank" rel="noopener">
+            <i data-lucide="linkedin" aria-hidden="true"></i>
+            <div><b>LinkedIn</b><span>linkedin.com/in/imibrahimkhan</span></div>
+          </a>
+          <div class="contact-link" aria-label="Location">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+            <div><b>Location</b><span>Cox's Bazar, Chattogram, Bangladesh</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">IK</span><span>Ibrahim Khan</span></a>
+        <p>Full-Stack Web Developer &amp; Email Marketing Expert based in Cox's Bazar, Bangladesh. I build high-converting websites and email campaigns that grow your sales.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Case study</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="/privacy/">Privacy policy</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Social and feeds">
+        <h2>Connect</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/imibrahimkhan" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:ibrahimcox71@yahoo.com">Email</a></li>
+          <li><a href="https://wa.me/8801825256671" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="/rss.xml">RSS feed</a></li>
+          <li><a href="/llms.txt">llms.txt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Ibrahim Khan. Hand-coded with HTML, CSS &amp; vanilla JavaScript.</p>
+      <p>Cox's Bazar, Chattogram, Bangladesh · Available for freelance</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky WhatsApp (mobile) & back-to-top -->
+<a class="wa-fab" href="https://wa.me/8801825256671?text=Hi%20Ibrahim%2C%20I%20found%20your%20website%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat with Ibrahim on WhatsApp"><i data-lucide="message-circle" aria-hidden="true"></i></a>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up" aria-hidden="true"></i></button>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script>
+(function(){
+'use strict';
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var finePointer = matchMedia('(pointer: fine)').matches;
+/* Lucide icons */
+window.addEventListener('load', function(){ if(window.lucide) lucide.createIcons(); });
+
+/* ---------- Theme toggle ---------- */
+var toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', function(){
+  var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try{ localStorage.setItem('ik-theme', next); }catch(e){}
+});
+
+/* ---------- Header, progress, to-top ---------- */
+var header = document.getElementById('header'), progress = document.getElementById('progress'), toTop = document.getElementById('to-top'), ticking = false;
+function onScroll(){
+  var y = scrollY;
+  header.classList.toggle('scrolled', y > 12);
+  var h = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+  toTop.classList.toggle('show', y > 600);
+  ticking = false;
+}
+addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+onScroll();
+toTop.addEventListener('click', function(){ scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
+
+/* ---------- Mobile nav ---------- */
+var navToggle = document.getElementById('nav-toggle'), navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function(){
+  var open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  navToggle.innerHTML = '<i data-lucide="' + (open ? 'x' : 'menu') + '" aria-hidden="true"></i>';
+  if(window.lucide) lucide.createIcons();
+});
+navLinks.addEventListener('click', function(e){ if(e.target.closest('a')){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); } });
+addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); navToggle.focus(); } });
+
+/* ---------- Scroll reveal ---------- */
+var revealEls = document.querySelectorAll('.reveal');
+if(reduce || !('IntersectionObserver' in window)){
+  revealEls.forEach(function(el){ el.classList.add('in'); });
+}else{
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  revealEls.forEach(function(el){ io.observe(el); });
+}
+
+/* ---------- Counters ---------- */
+var counters = document.querySelectorAll('[data-count]');
+if(counters.length && !reduce && 'IntersectionObserver' in window){
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      cio.unobserve(en.target);
+      var el = en.target, target = +el.dataset.count, t0 = null;
+      function tick(t){ if(!t0) t0 = t; var p = Math.min((t - t0)/1200, 1); el.textContent = Math.round(target * (1 - Math.pow(1-p, 3))); if(p < 1) requestAnimationFrame(tick); }
+      requestAnimationFrame(tick);
+    });
+  }, {threshold:.6});
+  counters.forEach(function(c){ cio.observe(c); });
+}else{ counters.forEach(function(c){ c.textContent = c.dataset.count; }); }
+
+/* ---------- 3D tilt cards ---------- */
+if(finePointer && !reduce){
+  document.querySelectorAll('[data-tilt]').forEach(function(card){
+    var raf = null;
+    card.addEventListener('pointermove', function(e){
+      if(raf) return;
+      raf = requestAnimationFrame(function(){
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+        card.style.transform = 'perspective(900px) rotateX(' + (-y*6).toFixed(2) + 'deg) rotateY(' + (x*8).toFixed(2) + 'deg) translateY(-2px)';
+        raf = null;
+      });
+    });
+    card.addEventListener('pointerleave', function(){ card.style.transform = ''; });
+  });
+}
+
+/* ---------- Magnetic buttons ---------- */
+if(finePointer && !reduce){
+  document.querySelectorAll('[data-magnetic]').forEach(function(btn){
+    btn.addEventListener('pointermove', function(e){
+      var r = btn.getBoundingClientRect();
+      var x = e.clientX - r.left - r.width/2, y = e.clientY - r.top - r.height/2;
+      btn.style.transform = 'translate(' + (x*.22).toFixed(1) + 'px,' + (y*.28).toFixed(1) + 'px)';
+    });
+    btn.addEventListener('pointerleave', function(){ btn.style.transform = ''; });
+  });
+}
+
+/* ---------- FAQ: keep one open ---------- */
+var faqs = document.querySelectorAll('.faq-item');
+faqs.forEach(function(d){ d.addEventListener('toggle', function(){ if(d.open){ faqs.forEach(function(o){ if(o !== d) o.open = false; }); } }); });
+
+/* ---------- Blog: search + tag filter + pagination ---------- */
+var posts = Array.prototype.slice.call(document.querySelectorAll('[data-post]'));
+var searchInput = document.getElementById('blog-search'), pills = document.querySelectorAll('.tag-pill');
+var countEl = document.getElementById('blog-count'), noRes = document.getElementById('no-results'), pager = document.getElementById('pager');
+var activeTag = 'all', page = 1, PER = 6;
+function applyFilter(){
+  var query = searchInput.value.trim().toLowerCase();
+  var visible = posts.filter(function(p){
+    var hay = (p.dataset.title + ' ' + p.dataset.tags + ' ' + p.dataset.desc).toLowerCase();
+    var tagOK = activeTag === 'all' || p.dataset.tags.split(' ').indexOf(activeTag) !== -1;
+    return tagOK && (!query || hay.indexOf(query) !== -1);
+  });
+  var pages = Math.max(1, Math.ceil(visible.length / PER));
+  if(page > pages) page = pages;
+  posts.forEach(function(p){ p.style.display = 'none'; });
+  visible.slice((page-1)*PER, page*PER).forEach(function(p){ p.style.display = ''; });
+  countEl.textContent = 'Showing ' + visible.length + ' article' + (visible.length === 1 ? '' : 's');
+  noRes.style.display = visible.length ? 'none' : '';
+  pager.hidden = pages <= 1;
+  pager.innerHTML = '';
+  for(var i = 1; i <= pages; i++){
+    (function(n){
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = n;
+      b.setAttribute('aria-label', 'Go to page ' + n);
+      if(n === page) b.setAttribute('aria-current', 'page');
+      b.addEventListener('click', function(){ page = n; applyFilter(); document.getElementById('blog').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); });
+      pager.appendChild(b);
+    })(i);
+  }
+}
+searchInput.addEventListener('input', function(){ page = 1; applyFilter(); });
+pills.forEach(function(pill){
+  pill.addEventListener('click', function(){
+    pills.forEach(function(p){ p.setAttribute('aria-pressed','false'); });
+    pill.setAttribute('aria-pressed','true');
+    activeTag = pill.dataset.tag; page = 1; applyFilter();
+  });
+});
+applyFilter();
+
+/* ---------- Footer year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Lazy Three.js hero -->
+<script type="module">
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const lowEnd = (navigator.hardwareConcurrency || 4) <= 4 || (navigator.deviceMemory && navigator.deviceMemory <= 4);
+const isMobile = matchMedia('(max-width: 767.98px)').matches;
+const saveData = navigator.connection && navigator.connection.saveData;
+if(!reduce && !lowEnd && !isMobile && !saveData && 'IntersectionObserver' in window){
+  const hero = document.querySelector('.hero');
+  const boot = () => { initThree().catch(() => {}); };
+  const io = new IntersectionObserver((en) => { if(en[0].isIntersecting){ io.disconnect(); if('requestIdleCallback' in window){ requestIdleCallback(boot, {timeout: 1500}); } else { setTimeout(boot, 250); } } }, {threshold: .05});
+  io.observe(hero);
+}
+async function initThree(){
+  const THREE = await import('three');
+  const canvas = document.getElementById('hero-canvas');
+  let renderer;
+  try{ renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true, powerPreference:'high-performance'}); }
+  catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(heroSize().w, heroSize().h);
+  function heroSize(){ const h = document.querySelector('.hero'); return {w: h.clientWidth, h: h.clientHeight}; }
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x0a0b0f, .028);
+  const camera = new THREE.PerspectiveCamera(55, heroSize().w / heroSize().h, .1, 120);
+  camera.position.set(0, 0, 30);
+
+  const world = new THREE.Group(); scene.add(world);
+  const ACCENT = 0xf2a93b, STEEL = 0x8ea0c2, PALE = 0xe8ecf4;
+
+  /* Particle field */
+  const COUNT = 800;
+  const pos = new Float32Array(COUNT * 3), col = new Float32Array(COUNT * 3), seed = new Float32Array(COUNT);
+  const palette = [new THREE.Color(ACCENT), new THREE.Color(PALE), new THREE.Color(STEEL)];
+  for(let i = 0; i < COUNT; i++){
+    const r = 14 + Math.random() * 22, th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1);
+    pos[i*3]   = r * Math.sin(ph) * Math.cos(th);
+    pos[i*3+1] = (Math.random() - .5) * 26;
+    pos[i*3+2] = r * Math.sin(ph) * Math.sin(th) - 6;
+    const c = palette[(Math.random() * 3) | 0];
+    col[i*3] = c.r; col[i*3+1] = c.g; col[i*3+2] = c.b;
+    seed[i] = Math.random() * Math.PI * 2;
+  }
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  pGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  const points = new THREE.Points(pGeo, new THREE.PointsMaterial({size:.14, vertexColors:true, transparent:true, opacity:.85, depthWrite:false, blending:THREE.AdditiveBlending}));
+  world.add(points);
+
+  /* Floating wireframe geometry */
+  const mk = (geo, c, o) => new THREE.Mesh(geo, new THREE.MeshBasicMaterial({color:c, wireframe:true, transparent:true, opacity:o}));
+  const knot = mk(new THREE.TorusKnotGeometry(6.5, 1.9, 90, 12), ACCENT, .16); knot.position.set(-15, 3.5, -8);
+  const ico  = mk(new THREE.IcosahedronGeometry(4.4, 0), STEEL, .2);  ico.position.set(14.5, -4.5, -4);
+  const octa = mk(new THREE.OctahedronGeometry(3.1, 0), ACCENT, .28);  octa.position.set(10, 7.5, -12);
+  const ring = mk(new THREE.TorusGeometry(9, .28, 8, 72), PALE, .08);  ring.position.set(-4, -8, -16); ring.rotation.x = 1.1;
+  world.add(knot, ico, octa, ring);
+
+  /* Interaction state */
+  let mx = 0, my = 0, tmx = 0, tmy = 0, t = 0, running = true, visible = true, sy = 0;
+  addEventListener('pointermove', (e) => { tmx = (e.clientX / innerWidth - .5); tmy = (e.clientY / innerHeight - .5); }, {passive:true});
+  addEventListener('scroll', () => { sy = scrollY; }, {passive:true});
+  document.addEventListener('visibilitychange', () => { running = !document.hidden; if(running) loop(); });
+  new IntersectionObserver((en) => { visible = en[0].isIntersecting; if(visible && running) loop(); }, {threshold: 0}).observe(document.querySelector('.hero'));
+  addEventListener('resize', () => {
+    const s = heroSize();
+    camera.aspect = s.w / s.h; camera.updateProjectionMatrix();
+    renderer.setSize(s.w, s.h);
+  }, {passive:true});
+
+  let rafId = null;
+  function loop(){
+    if(rafId) return;
+    rafId = requestAnimationFrame(function frame(){
+      rafId = null;
+      if(!running || !visible) return;
+      t += .004;
+      mx += (tmx - mx) * .045; my += (tmy - my) * .045;
+      world.rotation.y = t * .5 + mx * .5;
+      world.rotation.x = my * .3;
+      world.position.y = Math.min(sy * .006, 8);
+      points.rotation.y = t * .35;
+      knot.rotation.x = t * 1.4; knot.rotation.y = t * .9; knot.position.y = 3.5 + Math.sin(t * 2.1) * .9;
+      ico.rotation.x = t * .8;  ico.rotation.z = t * .6;  ico.position.y = -4.5 + Math.cos(t * 1.7) * 1.1;
+      octa.rotation.y = t * 1.8; octa.position.y = 7.5 + Math.sin(t * 1.3 + 2) * .8;
+      ring.rotation.z = t * .25;
+      camera.position.x = mx * 2.2; camera.position.y = -my * 1.6 - Math.min(sy * .004, 5);
+      camera.lookAt(0, 0, -4);
+      renderer.render(scene, camera);
+      loop();
+    });
+  }
+  document.body.classList.add('use-3d');
+  loop();
+}
+</script>
+</body>
+</html>
